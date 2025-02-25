@@ -1,0 +1,41 @@
+# PostgreSQL Database
+PG_DB_HOST="127.0.0.1"
+PG_DB_PORT="5432"
+PG_DB_DATABASE="test"
+PG_DB_USERNAME="admin"
+PG_DB_PASSWORD="1234"
+
+# MongoDB
+MONGODB_URI="mongodb://localhost:27017/"
+
+# MSSQL Database
+MS_DB_HOST="127.0.0.1"
+MS_DB_PORT="1433"
+MS_DB_USERNAME="sa"
+MS_DB_PASSWORD="YourStrong@Passw0rd"
+MS_DB_DATABASE="master"
+
+
+# MySQL Database
+MYSQL_HOST="127.0.0.1"
+MYSQL_PORT="3306"
+MYSQL_DATABASE="test"
+MYSQL_USER="user"
+MYSQL_PASSWORD="password"
+MYSQL_ROOT_PASSWORD="example"
+
+# Logs
+STORAGES_FOLDER_ERROR_PATH="storages/logs/error"
+STORAGES_FOLDER_INFO_PATH="storages/logs/info"
+STORAGES_FOLDER_DEBUG_PATH="storages/logs/debug"
+LOG_INFO_EXP="30"
+LOG_ERROR_EXP="30"
+LOG_DEBUG_EXP="3"
+
+ENV="dev"
+
+# folder
+STORAGES_FOLDER_IMAGE_PATH="storages/images"
+STORAGES_FOLDER_EXCEL_PATH="storages/excels"
+STORAGES_FOLDER_PDF_PATH="storages/pdfs"
+STORAGES_FOLDER_HTML_PATH="storages/htmls"

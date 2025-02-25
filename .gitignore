@@ -1,0 +1,13 @@
+go.sum
+.DS_Store
+.goreload
+storages/
+.vscode
+.air.toml.
+tmp
+docs/
+storages
+docs
+docs.go
+__debug*
+.env

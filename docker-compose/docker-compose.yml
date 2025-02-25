@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_USER: "admin"
+      POSTGRES_DB: "test"
+
+  mongodb:
+    image: mongo:latest
+    hostname: mongodb
+    ports:
+      - 27017:27017
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "example"
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  mssql:
+    image: mcr.microsoft.com/azure-sql-edge
+    ports:
+      - 1433:1433
+    environment:
+      SA_PASSWORD: "YourStrong@Passw0rd"
+      ACCEPT_EULA: "1"
+      MSSQL_PID: "Developer"
+    volumes:
+      - ./mssql:/var/opt/mssql
