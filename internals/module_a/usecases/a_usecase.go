@@ -1,10 +1,10 @@
 package usecases
 
 import (
-	"clean_architecture/internals/module_a/adapters/inputs"
-	"clean_architecture/internals/module_a/adapters/outputs"
-	"clean_architecture/internals/module_a/repositories"
-	"clean_architecture/logs"
+	"microservice/internals/module_a/adapters/inputs"
+	"microservice/internals/module_a/adapters/outputs"
+	"microservice/internals/module_a/repositories"
+	"microservice/logs"
 )
 
 type IUsecase interface {

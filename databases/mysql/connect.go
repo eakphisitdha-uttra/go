@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"clean_architecture/logs"
+	"microservice/logs"
 
 	_ "github.com/go-sql-driver/mysql"
 )

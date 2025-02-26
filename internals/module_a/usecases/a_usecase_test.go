@@ -1,10 +1,10 @@
 package usecases
 
 import (
-	"clean_architecture/databases/postgresql/tables"
-	"clean_architecture/internals/module_a/adapters/inputs"
-	"clean_architecture/internals/module_a/adapters/outputs"
-	mocksRepository "clean_architecture/internals/module_a/repositories/mocks"
+	"microservice/databases/postgresql/tables"
+	"microservice/internals/module_a/adapters/inputs"
+	"microservice/internals/module_a/adapters/outputs"
+	mocksRepository "microservice/internals/module_a/repositories/mocks"
 	"testing"
 
 	"github.com/stretchr/testify/suite"

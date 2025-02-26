@@ -1,10 +1,10 @@
 package repositories
 
 import (
-	"clean_architecture/databases/postgresql/tables"
-	"clean_architecture/internals/module_a/adapters/inputs"
 	"context"
 	"database/sql"
+	"microservice/databases/postgresql/tables"
+	"microservice/internals/module_a/adapters/inputs"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson"

@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"clean_architecture/logs"
+	"microservice/logs"
 
 	_ "github.com/denisenkom/go-mssqldb"
 )

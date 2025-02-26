@@ -1,13 +1,13 @@
 package main
 
 import (
-	"clean_architecture/databases/mongodb"
-	"clean_architecture/databases/mssql"
-	"clean_architecture/databases/mysql"
-	"clean_architecture/databases/postgresql"
-	"clean_architecture/logs"
-	"clean_architecture/routes"
 	"log"
+	"microservice/databases/mongodb"
+	"microservice/databases/mssql"
+	"microservice/databases/mysql"
+	"microservice/databases/postgresql"
+	"microservice/logs"
+	"microservice/routes"
 
 	"github.com/joho/godotenv"
 )

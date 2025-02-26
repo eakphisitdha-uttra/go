@@ -5,10 +5,10 @@ import (
 	"os"
 	"strings"
 
-	_ "clean_architecture/docs"
-	"clean_architecture/internals/module_a/handlers"
-	"clean_architecture/internals/module_a/repositories"
-	"clean_architecture/internals/module_a/usecases"
+	_ "microservice/docs"
+	"microservice/internals/module_a/handlers"
+	"microservice/internals/module_a/repositories"
+	"microservice/internals/module_a/usecases"
 
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
@@ -30,7 +30,7 @@ func SetupRouter(pg *sql.DB, mg *mongo.Client) *gin.Engine {
 	r.StaticFS("/storages/htmls", gin.Dir(os.Getenv("STORAGES_FOLDER_HTML_PATH"), true))
 
 	// Swagger documentation (only in non-production environments)
-	if os.Getenv("ENV") != "prod" {
+	if os.Getenv("ENV") != "production" {
 		r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	}
 

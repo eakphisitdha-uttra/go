@@ -1,4 +1,4 @@
-module clean_architecture
+module microservice
 
 go 1.23.3
 

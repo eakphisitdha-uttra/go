@@ -1,10 +1,10 @@
 package handlers
 
 import (
-	"clean_architecture/internals/module_a/adapters/inputs"
-	"clean_architecture/internals/module_a/adapters/outputs"
-	"clean_architecture/internals/module_a/usecases"
-	"clean_architecture/responses"
+	"microservice/internals/module_a/adapters/inputs"
+	"microservice/internals/module_a/adapters/outputs"
+	"microservice/internals/module_a/usecases"
+	"microservice/responses"
 	"strconv"
 
 	"github.com/gin-gonic/gin"

@@ -1,7 +1,7 @@
 package responses
 
 import (
-	"clean_architecture/logs"
+	"microservice/logs"
 	"net/http"
 )
 
