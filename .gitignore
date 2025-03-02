@@ -5,9 +5,9 @@ storages/
 .vscode
 .air.toml.
 tmp
-#docs/
+docs/
 storages
-#docs
-#docs.go
+docs
+docs.go
 __debug*
 .env
