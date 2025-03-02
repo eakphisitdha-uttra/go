@@ -1,0 +1,443 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/api/v1/a/add": {
+            "post": {
+                "description": "Add user",
+                "tags": [
+                    "a"
+                ],
+                "summary": "Add",
+                "operationId": "Add",
+                "parameters": [
+                    {
+                        "description": "user data",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/inputs.AddInput"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessOKSwagger"
+                        }
+                    },
+                    "201": {
+                        "description": "Create Successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessCreatedSwagger"
+                        }
+                    },
+                    "202": {
+                        "description": "Accepted successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessAcceptedSwagger"
+                        }
+                    },
+                    "400": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorNotFoundSwagger"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorUnauthorizedSwagger"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorValidatedSwagger"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorInternalServerErrorSwagger"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/a/delete/{id}": {
+            "delete": {
+                "description": "Delete user",
+                "tags": [
+                    "a"
+                ],
+                "summary": "Delete",
+                "operationId": "Delete",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessOKSwagger"
+                        }
+                    },
+                    "201": {
+                        "description": "Create Successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessCreatedSwagger"
+                        }
+                    },
+                    "202": {
+                        "description": "Accepted successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessAcceptedSwagger"
+                        }
+                    },
+                    "400": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorNotFoundSwagger"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorUnauthorizedSwagger"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorValidatedSwagger"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorInternalServerErrorSwagger"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/a/get": {
+            "get": {
+                "description": "Get user",
+                "tags": [
+                    "a"
+                ],
+                "summary": "Get",
+                "operationId": "Get",
+                "responses": {
+                    "200": {
+                        "description": "Get successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessOKSwagger"
+                        }
+                    },
+                    "201": {
+                        "description": "Create Successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessCreatedSwagger"
+                        }
+                    },
+                    "202": {
+                        "description": "Accepted successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessAcceptedSwagger"
+                        }
+                    },
+                    "400": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorNotFoundSwagger"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorUnauthorizedSwagger"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorValidatedSwagger"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorInternalServerErrorSwagger"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/a/update/{id}": {
+            "put": {
+                "description": "Update user",
+                "tags": [
+                    "a"
+                ],
+                "summary": "Update",
+                "operationId": "Update",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessOKSwagger"
+                        }
+                    },
+                    "201": {
+                        "description": "Create Successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessCreatedSwagger"
+                        }
+                    },
+                    "202": {
+                        "description": "Accepted successfully",
+                        "schema": {
+                            "$ref": "#/definitions/responses.SuccessAcceptedSwagger"
+                        }
+                    },
+                    "400": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorNotFoundSwagger"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorUnauthorizedSwagger"
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorValidatedSwagger"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/responses.ErrorInternalServerErrorSwagger"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "inputs.AddInput": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "responses.ErrorBadRequestedSwagger": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "x-order": "0",
+                    "example": 400
+                },
+                "error": {
+                    "type": "string",
+                    "x-order": "1",
+                    "example": "Bad Request"
+                },
+                "message": {
+                    "type": "string",
+                    "x-order": "2",
+                    "example": "bad request error message"
+                },
+                "details": {
+                    "type": "object",
+                    "x-order": "3"
+                }
+            }
+        },
+        "responses.ErrorInternalServerErrorSwagger": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "x-order": "0",
+                    "example": 500
+                },
+                "error": {
+                    "type": "string",
+                    "x-order": "1",
+                    "example": "Internal Server Error"
+                },
+                "message": {
+                    "type": "string",
+                    "x-order": "2",
+                    "example": "internal server error"
+                },
+                "details": {
+                    "type": "object",
+                    "x-order": "3"
+                }
+            }
+        },
+        "responses.ErrorNotFoundSwagger": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "x-order": "0",
+                    "example": 404
+                },
+                "error": {
+                    "type": "string",
+                    "x-order": "1",
+                    "example": "Not Found"
+                },
+                "message": {
+                    "type": "string",
+                    "x-order": "2",
+                    "example": "data was not found"
+                },
+                "details": {
+                    "type": "object",
+                    "x-order": "3"
+                }
+            }
+        },
+        "responses.ErrorUnauthorizedSwagger": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "x-order": "0",
+                    "example": 401
+                },
+                "error": {
+                    "type": "string",
+                    "x-order": "1",
+                    "example": "unauthorized to access the resource"
+                },
+                "message": {
+                    "type": "string",
+                    "x-order": "2",
+                    "example": "unauthorized to access the resource"
+                },
+                "details": {
+                    "type": "object",
+                    "x-order": "3"
+                }
+            }
+        },
+        "responses.ErrorValidatedSwagger": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "x-order": "0",
+                    "example": 422
+                },
+                "error": {
+                    "type": "string",
+                    "x-order": "1",
+                    "example": "Unprocessable Entity"
+                },
+                "message": {
+                    "type": "string",
+                    "x-order": "2",
+                    "example": "Validation failed"
+                },
+                "details": {
+                    "type": "object",
+                    "x-order": "3"
+                }
+            }
+        },
+        "responses.SuccessAcceptedSwagger": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "x-order": "0",
+                    "example": 202
+                },
+                "message": {
+                    "type": "string",
+                    "x-order": "1",
+                    "example": "Accepted successfully"
+                },
+                "data": {
+                    "type": "object",
+                    "x-order": "2"
+                }
+            }
+        },
+        "responses.SuccessCreatedSwagger": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "x-order": "0",
+                    "example": 201
+                },
+                "message": {
+                    "type": "string",
+                    "x-order": "1",
+                    "example": "created successfully"
+                },
+                "data": {
+                    "type": "object",
+                    "x-order": "2"
+                }
+            }
+        },
+        "responses.SuccessOKSwagger": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "x-order": "0",
+                    "example": 200
+                },
+                "message": {
+                    "type": "string",
+                    "x-order": "1",
+                    "example": "Get successfully"
+                },
+                "data": {
+                    "type": "object",
+                    "x-order": "2"
+                }
+            }
+        }
+    }
+}

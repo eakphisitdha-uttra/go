@@ -6,9 +6,9 @@ import (
 	"strings"
 
 	_ "microservice/docs"
-	"microservice/internals/module_a/handlers"
-	"microservice/internals/module_a/repositories"
-	"microservice/internals/module_a/usecases"
+	"microservice/internals/a/handlers"
+	"microservice/internals/a/repositories"
+	"microservice/internals/a/usecases"
 
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
@@ -38,16 +38,16 @@ func SetupRouter(pg *sql.DB, mg *mongo.Client) *gin.Engine {
 	path := r.Group("/api/v1")
 
 	//module A
-	moduleA := path.Group("/module_a")
+	a := path.Group("/a")
 	{
-		moduleARepositories := repositories.NewRepository(pg, mg)
-		moduleAUsecases := usecases.NewUsecase(moduleARepositories)
-		moduleAHandler := handlers.NewHandler(moduleAUsecases)
+		aRepositories := repositories.NewRepository(pg, mg)
+		aUsecases := usecases.NewUsecase(aRepositories)
+		aHandler := handlers.NewHandler(aUsecases)
 
-		moduleA.GET("/get", moduleAHandler.Get)
-		moduleA.POST("/add", moduleAHandler.Add)
-		moduleA.PUT("/update/:id", moduleAHandler.Update)
-		moduleA.DELETE("/delete/:id", moduleAHandler.Delete)
+		a.GET("/get", aHandler.Get)
+		a.POST("/add", aHandler.Add)
+		a.PUT("/update/:id", aHandler.Update)
+		a.DELETE("/delete/:id", aHandler.Delete)
 	}
 
 	return r

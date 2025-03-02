@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"microservice/internals/module_a/adapters/inputs"
-	"microservice/internals/module_a/adapters/outputs"
-	"microservice/internals/module_a/usecases"
+	"microservice/internals/a/adapters/inputs"
+	"microservice/internals/a/adapters/outputs"
+	"microservice/internals/a/usecases"
 	"microservice/responses"
 	"strconv"
 
@@ -27,7 +27,7 @@ func NewHandler(usecase usecases.IUsecase) IHandler {
 
 // @summary Get
 // @description Get user
-// @tags module_a
+// @tags a
 // // @Security ApiKeyAuth
 // @id Get
 // // @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
@@ -39,7 +39,7 @@ func NewHandler(usecase usecases.IUsecase) IHandler {
 // @response 400 {object} responses.ErrorNotFoundSwagger "Not Found"
 // @response 422 {object} responses.ErrorValidatedSwagger "Unprocessable Entity"
 // @response 500 {object} responses.ErrorInternalServerErrorSwagger "Internal Server Error"
-// @router /api/v1/module_a/get [GET]
+// @router /api/v1/a/get [GET]
 func (h *Handler) Get(c *gin.Context) {
 	output, err := h.usecase.Get()
 	if err != nil {
@@ -52,7 +52,7 @@ func (h *Handler) Get(c *gin.Context) {
 
 // @summary Add
 // @description Add user
-// @tags module_a
+// @tags a
 // // @Security ApiKeyAuth
 // @id Add
 // // @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
@@ -65,7 +65,7 @@ func (h *Handler) Get(c *gin.Context) {
 // @response 400 {object} responses.ErrorNotFoundSwagger "Not Found"
 // @response 422 {object} responses.ErrorValidatedSwagger "Unprocessable Entity"
 // @response 500 {object} responses.ErrorInternalServerErrorSwagger "Internal Server Error"
-// @router /api/v1/module_a/add [post]
+// @router /api/v1/a/add [post]
 func (h *Handler) Add(c *gin.Context) {
 	var input inputs.AddInput
 	if err := c.ShouldBindJSON(&input); err != nil {
@@ -82,7 +82,7 @@ func (h *Handler) Add(c *gin.Context) {
 
 // @summary Update
 // @description Update user
-// @tags module_a
+// @tags a
 // // @Security ApiKeyAuth
 // @id Update
 // // @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
@@ -95,7 +95,7 @@ func (h *Handler) Add(c *gin.Context) {
 // @response 400 {object} responses.ErrorNotFoundSwagger "Not Found"
 // @response 422 {object} responses.ErrorValidatedSwagger "Unprocessable Entity"
 // @response 500 {object} responses.ErrorInternalServerErrorSwagger "Internal Server Error"
-// @router /api/v1/module_a/update/{id} [PUT]
+// @router /api/v1/a/update/{id} [PUT]
 func (h *Handler) Update(c *gin.Context) {
 	if c.Param("id") == "" {
 		output := []outputs.ValidateOutput{}
@@ -126,7 +126,7 @@ func (h *Handler) Update(c *gin.Context) {
 
 // @summary Delete
 // @description Delete user
-// @tags module_a
+// @tags a
 // // @Security ApiKeyAuth
 // @id Delete
 // // @Param Authorization header string true "Insert your access token" default(Bearer <Add access token here>)
@@ -139,7 +139,7 @@ func (h *Handler) Update(c *gin.Context) {
 // @response 400 {object} responses.ErrorNotFoundSwagger "Not Found"
 // @response 422 {object} responses.ErrorValidatedSwagger "Unprocessable Entity"
 // @response 500 {object} responses.ErrorInternalServerErrorSwagger "Internal Server Error"
-// @router /api/v1/module_a/delete/{id} [DELETE]
+// @router /api/v1/a/delete/{id} [DELETE]
 func (h *Handler) Delete(c *gin.Context) {
 
 	if c.Param("id") == "" {

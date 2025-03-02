@@ -1,9 +1,9 @@
 package usecases
 
 import (
-	"microservice/internals/module_a/adapters/inputs"
-	"microservice/internals/module_a/adapters/outputs"
-	"microservice/internals/module_a/repositories"
+	"microservice/internals/a/adapters/inputs"
+	"microservice/internals/a/adapters/outputs"
+	"microservice/internals/a/repositories"
 	"microservice/logs"
 )
 

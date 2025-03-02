@@ -2,9 +2,9 @@ package usecases
 
 import (
 	"microservice/databases/postgresql/tables"
-	"microservice/internals/module_a/adapters/inputs"
-	"microservice/internals/module_a/adapters/outputs"
-	mocksRepository "microservice/internals/module_a/repositories/mocks"
+	"microservice/internals/a/adapters/inputs"
+	"microservice/internals/a/adapters/outputs"
+	mocksRepository "microservice/internals/a/repositories/mocks"
 	"testing"
 
 	"github.com/stretchr/testify/suite"

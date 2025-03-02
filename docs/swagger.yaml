@@ -1,0 +1,307 @@
+definitions:
+  inputs.AddInput:
+    properties:
+      name:
+        type: string
+    required:
+    - name
+    type: object
+  responses.ErrorBadRequestedSwagger:
+    properties:
+      code:
+        example: 400
+        type: integer
+        x-order: "0"
+      details:
+        type: object
+        x-order: "3"
+      error:
+        example: Bad Request
+        type: string
+        x-order: "1"
+      message:
+        example: bad request error message
+        type: string
+        x-order: "2"
+    type: object
+  responses.ErrorInternalServerErrorSwagger:
+    properties:
+      code:
+        example: 500
+        type: integer
+        x-order: "0"
+      details:
+        type: object
+        x-order: "3"
+      error:
+        example: Internal Server Error
+        type: string
+        x-order: "1"
+      message:
+        example: internal server error
+        type: string
+        x-order: "2"
+    type: object
+  responses.ErrorNotFoundSwagger:
+    properties:
+      code:
+        example: 404
+        type: integer
+        x-order: "0"
+      details:
+        type: object
+        x-order: "3"
+      error:
+        example: Not Found
+        type: string
+        x-order: "1"
+      message:
+        example: data was not found
+        type: string
+        x-order: "2"
+    type: object
+  responses.ErrorUnauthorizedSwagger:
+    properties:
+      code:
+        example: 401
+        type: integer
+        x-order: "0"
+      details:
+        type: object
+        x-order: "3"
+      error:
+        example: unauthorized to access the resource
+        type: string
+        x-order: "1"
+      message:
+        example: unauthorized to access the resource
+        type: string
+        x-order: "2"
+    type: object
+  responses.ErrorValidatedSwagger:
+    properties:
+      code:
+        example: 422
+        type: integer
+        x-order: "0"
+      details:
+        type: object
+        x-order: "3"
+      error:
+        example: Unprocessable Entity
+        type: string
+        x-order: "1"
+      message:
+        example: Validation failed
+        type: string
+        x-order: "2"
+    type: object
+  responses.SuccessAcceptedSwagger:
+    properties:
+      code:
+        example: 202
+        type: integer
+        x-order: "0"
+      data:
+        type: object
+        x-order: "2"
+      message:
+        example: Accepted successfully
+        type: string
+        x-order: "1"
+    type: object
+  responses.SuccessCreatedSwagger:
+    properties:
+      code:
+        example: 201
+        type: integer
+        x-order: "0"
+      data:
+        type: object
+        x-order: "2"
+      message:
+        example: created successfully
+        type: string
+        x-order: "1"
+    type: object
+  responses.SuccessOKSwagger:
+    properties:
+      code:
+        example: 200
+        type: integer
+        x-order: "0"
+      data:
+        type: object
+        x-order: "2"
+      message:
+        example: Get successfully
+        type: string
+        x-order: "1"
+    type: object
+info:
+  contact: {}
+paths:
+  /api/v1/a/add:
+    post:
+      description: Add user
+      operationId: Add
+      parameters:
+      - description: user data
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/inputs.AddInput'
+      responses:
+        "200":
+          description: Get successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessOKSwagger'
+        "201":
+          description: Create Successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessCreatedSwagger'
+        "202":
+          description: Accepted successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessAcceptedSwagger'
+        "400":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/responses.ErrorNotFoundSwagger'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/responses.ErrorUnauthorizedSwagger'
+        "422":
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/responses.ErrorValidatedSwagger'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/responses.ErrorInternalServerErrorSwagger'
+      summary: Add
+      tags:
+      - a
+  /api/v1/a/delete/{id}:
+    delete:
+      description: Delete user
+      operationId: Delete
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Get successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessOKSwagger'
+        "201":
+          description: Create Successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessCreatedSwagger'
+        "202":
+          description: Accepted successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessAcceptedSwagger'
+        "400":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/responses.ErrorNotFoundSwagger'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/responses.ErrorUnauthorizedSwagger'
+        "422":
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/responses.ErrorValidatedSwagger'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/responses.ErrorInternalServerErrorSwagger'
+      summary: Delete
+      tags:
+      - a
+  /api/v1/a/get:
+    get:
+      description: Get user
+      operationId: Get
+      responses:
+        "200":
+          description: Get successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessOKSwagger'
+        "201":
+          description: Create Successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessCreatedSwagger'
+        "202":
+          description: Accepted successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessAcceptedSwagger'
+        "400":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/responses.ErrorNotFoundSwagger'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/responses.ErrorUnauthorizedSwagger'
+        "422":
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/responses.ErrorValidatedSwagger'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/responses.ErrorInternalServerErrorSwagger'
+      summary: Get
+      tags:
+      - a
+  /api/v1/a/update/{id}:
+    put:
+      description: Update user
+      operationId: Update
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: Get successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessOKSwagger'
+        "201":
+          description: Create Successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessCreatedSwagger'
+        "202":
+          description: Accepted successfully
+          schema:
+            $ref: '#/definitions/responses.SuccessAcceptedSwagger'
+        "400":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/responses.ErrorNotFoundSwagger'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/responses.ErrorUnauthorizedSwagger'
+        "422":
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/responses.ErrorValidatedSwagger'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/responses.ErrorInternalServerErrorSwagger'
+      summary: Update
+      tags:
+      - a
+swagger: "2.0"

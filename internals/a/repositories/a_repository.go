@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"microservice/databases/postgresql/tables"
-	"microservice/internals/module_a/adapters/inputs"
+	"microservice/internals/a/adapters/inputs"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson"

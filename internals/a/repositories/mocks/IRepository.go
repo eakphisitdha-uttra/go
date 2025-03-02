@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	inputs "microservice/internals/module_a/adapters/inputs"
+	inputs "microservice/internals/a/adapters/inputs"
 
 	mock "github.com/stretchr/testify/mock"
 
