@@ -1,80 +1,80 @@
-# Microservice
+# ไมโครเซอร์วิส
 
-A Go-based microservice application with multi-database support and RESTful API endpoints.
+แอปพลิเคชันไมโครเซอร์วิสที่พัฒนาด้วยภาษา Go รองรับการเชื่อมต่อหลายฐานข้อมูลและ RESTful API
 
-## Features
+## คุณสมบัติ
 
-- 🗄️ **Multi-Database Support**: PostgreSQL, MongoDB, MySQL, MSSQL
-- 🚀 **Web Framework**: Gin HTTP framework
-- 📝 **API Documentation**: Swagger/OpenAPI integration
-- 🔐 **JWT Authentication**: JSON Web Token support
-- 📊 **Excel Operations**: Excel file processing with excelize
-- 🌐 **Web Automation**: Chrome DevTools Protocol support
-- 📋 **Structured Logging**: Zap logging library
-- 🔧 **Environment Configuration**: dotenv support
+- 🗄️ **รองรับหลายฐานข้อมูล**: PostgreSQL, MongoDB, MySQL, MSSQL
+- 🚀 **เว็บเฟรมเวิร์ค**: Gin HTTP framework
+- 📝 **เอกสาร API**: Swagger/OpenAPI integration
+- 🔐 **การยืนยันตัวตน**: JWT Authentication
+- 📊 **จัดการไฟล์ Excel**: ประมวลผลไฟล์ Excel ด้วย excelize
+- 🌐 **เว็บออโตเมชัน**: Chrome DevTools Protocol support
+- 📋 **การบันทึกข้อมูล**: Zap logging library
+- 🔧 **การตั้งค่าสภาพแวดล้อม**: dotenv support
 
-## Tech Stack
+## เทคโนโลยีที่ใช้
 
 - **Go 1.23.3**
 - **Gin** - HTTP Web Framework
-- **Databases**:
+- **ฐานข้อมูล**:
   - PostgreSQL (lib/pq)
   - MongoDB (mongo-driver)
   - MySQL (go-sql-driver/mysql)
   - MSSQL (go-mssqldb)
-- **Authentication**: golang-jwt/jwt
-- **Documentation**: Swagger (swaggo)
-- **Logging**: uber-go/zap
-- **File Processing**: excelize/v2
+- **การยืนยันตัวตน**: golang-jwt/jwt
+- **เอกสาร**: Swagger (swaggo)
+- **การบันทึกข้อมูล**: uber-go/zap
+- **การประมวลผลไฟล์**: excelize/v2
 
-## Prerequisites
+## สิ่งที่ต้องเตรียม
 
-- Go 1.23.3 or higher
-- Docker (for containerized databases)
-- Access to all configured databases
+- Go 1.23.3 ขึ้นไป
+- Docker (สำหรับฐานข้อมูลในคอนเทนเนอร์)
+- การเข้าถึงฐานข้อมูลทั้งหมดที่กำหนดค่าไว้
 
-## Installation
+## การติดตั้ง
 
-1. Clone the repository:
+1. โคลน repository:
 ```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 cd YOUR_REPO_NAME
 ```
 
-2. Install dependencies:
+2. ติดตั้ง dependencies:
 ```bash
 go mod download
 ```
 
-3. Copy environment file:
+3. คัดลอกไฟล์ environment:
 ```bash
 cp .env.example .env
 ```
 
-4. Configure your database connections in `.env`
+4. กำหนดค่าการเชื่อมต่อฐานข้อมูลใน `.env`
 
-## Configuration
+## การตั้งค่า
 
-The application uses environment variables for configuration. Key variables include:
+แอปพลิเคชันใช้ตัวแปรสภาพแวดล้อมสำหรับการกำหนดค่า ตัวแปรสำคัญได้แก่:
 
-- Database connection strings for PostgreSQL, MongoDB, MySQL, MSSQL
-- JWT secret key
-- Server port (default: 8080)
-- Log levels and paths
+- สตริงการเชื่อมต่อฐานข้อมูลสำหรับ PostgreSQL, MongoDB, MySQL, MSSQL
+- คีย์ลับ JWT
+- พอร์ตเซิร์ฟเวอร์ (ค่าเริ่มต้น: 8080)
+- ระดับและพาธของ log
 
-## Running the Application
+## การรันแอปพลิเคชัน
 
-### Development
+### สำหรับพัฒนา
 
 ```bash
-# Run directly
+# รันโดยตรง
 go run main.go
 
-# Or with air for hot reload
+# หรือใช้ air สำหรับ hot reload
 air
 ```
 
-### Production
+### สำหรับ Production
 
 ```bash
 # Build
@@ -84,7 +84,7 @@ go build -o microservice main.go
 ./microservice
 ```
 
-### Docker
+### ใช้ Docker
 
 ```bash
 # Build image
@@ -94,48 +94,48 @@ docker build -t microservice .
 docker run -p 8080:8080 microservice
 ```
 
-## API Documentation
+## เอกสาร API
 
-Once the server is running, visit:
+เมื่อเซิร์ฟเวอร์ทำงาน ให้เข้าไปที่:
 - Swagger UI: `http://localhost:8080/swagger/index.html`
 
-## Project Structure
+## โครงสร้างโปรเจค
 
 ```
 .
-├── main.go              # Application entry point
-├── go.mod               # Go module file
-├── go.sum               # Dependency checksums
-├── .env                 # Environment variables
-├── .gitignore           # Git ignore rules
-├── databases/           # Database connection modules
+├── main.go              # จุดเริ่มต้นของแอปพลิเคชัน
+├── go.mod               # ไฟล์ Go module
+├── go.sum               # การตรวจสอบ dependencies
+├── .env                 # ตัวแปรสภาพแวดล้อม
+├── .gitignore           # กฎการ ignore ของ Git
+├── databases/           # โมดูลการเชื่อมต่อฐานข้อมูล
 │   ├── mongodb/
 │   ├── mssql/
 │   ├── mysql/
 │   └── postgresql/
-├── helper/              # Utility functions
-├── internals/           # Internal application logic
-├── logs/                # Logging configuration
-├── responses/           # API response structures
-├── routes/              # HTTP route definitions
-├── storages/            # File storage (gitignored)
-├── templates/           # Template files
-└── docker-compose/      # Docker configuration
+├── helper/              # ฟังก์ชัน utility
+├── internals/           # ตรรกะภายในแอปพลิเคชัน
+├── logs/                # การตั้งค่าการบันทึกข้อมูล
+├── responses/           # โครงสร้าง response ของ API
+├── routes/              # การกำหนด HTTP routes
+├── storages/            # ที่เก็บไฟล์ (gitignored)
+├── templates/           # ไฟล์เทมเพลต
+└── docker-compose/      # การตั้งค่า Docker
 ```
 
-## Database Setup
+## การตั้งค่าฐานข้อมูล
 
-The application connects to multiple databases. Ensure all databases are running and accessible:
+แอปพลิเคชันเชื่อมต่อกับหลายฐานข้อมูล ตรวจสอบให้แน่ใจว่าฐานข้อมูลทั้งหมดทำงานและเข้าถึงได้:
 
-### Using Docker Compose
+### ใช้ Docker Compose
 
 ```bash
 docker-compose -f docker-compose/docker-compose.yml up -d
 ```
 
-## Environment Variables
+## ตัวแปรสภาพแวดล้อม
 
-Create a `.env` file with the following variables:
+สร้างไฟล์ `.env` ด้วยตัวแปรต่อไปนี้:
 
 ```env
 # PostgreSQL
@@ -170,18 +170,18 @@ JWT_SECRET=your_jwt_secret_key
 SERVER_PORT=8080
 ```
 
-## Contributing
+## การมีส่วนร่วมในการพัฒนา
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Fork repository
+2. สร้าง branch ใหม่ (`git checkout -b feature/amazing-feature`)
+3. Commit การเปลี่ยนแปลง (`git commit -m 'Add some amazing feature'`)
+4. Push ไปยัง branch (`git push origin feature/amazing-feature`)
+5. เปิด Pull Request
 
-## License
+## ใบอนุญาต
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+โปรเจคนี้ใช้ใบอนุญาต MIT License - ดูรายละเอียดในไฟล์ LICENSE
 
-## Support
+## การสนับสนุน
 
-For support and questions, please open an issue in the GitHub repository.
+สำหรับการสนับสนุนและคำถาม กรุณาเปิด issue ใน GitHub repository
